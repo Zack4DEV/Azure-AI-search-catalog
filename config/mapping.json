@@ -1,0 +1,23 @@
+{
+  "mappings": {
+    "properties": {
+      "id": { "type": "keyword" },
+      "name": { "type": "text" },
+      "tier": { "type": "keyword" },
+      "description": { "type": "text" },
+      "specs": {
+        "type": "nested",
+        "properties": {
+          "name": { "type": "keyword" },
+          "value": { "type": "text" }
+        }
+      },
+      "embedding": {
+        "type": "dense_vector",
+        "dims": 1536,
+        "index": true,
+        "similarity": "cosine"
+      }
+    }
+  }
+}

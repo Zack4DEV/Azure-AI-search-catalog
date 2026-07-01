@@ -1,0 +1,42 @@
+project:
+  name: azure-ai-search-catalog
+  index_name: product-catalog
+
+# ---- Embedding model ----
+embeddings:
+  # Must match the deployment named in AZURE_OPENAI_EMBEDDING_DEPLOYMENT (.env)
+  model: text-embedding-3-small
+  dimensions: 1536          # MUST match search_index.json descriptionVector dimensions
+  source_template: "{name}. {description}"   # text combined before embedding
+
+# ---- Document chunking (for larger docs; product descriptions are usually short) ----
+chunking:
+  enabled: false            # product catalog entries rarely need chunking
+  chunk_size: 512           # tokens per chunk if enabled
+  chunk_overlap: 64         # token overlap between chunks
+
+# ---- Search behavior ----
+search:
+  default_mode: hybrid      # one of: keyword | vector | hybrid
+  top: 5                    # results returned to the user
+  k_nearest_neighbors: 10   # candidates fetched by the vector query
+  use_semantic_ranking: true
+  semantic_config: default-semantic
+  select_fields:
+    - id
+    - name
+    - description
+    - category
+    - price
+
+# ---- RAG / generation ----
+rag:
+  # Must match the deployment named in AZURE_OPENAI_CHAT_DEPLOYMENT (.env)
+  chat_model: gpt-4o
+  temperature: 0.2          # low = more grounded / deterministic answers
+  max_tokens: 800
+  top_n_context: 5          # how many retrieved docs to pass as grounding
+  system_prompt: >
+    You are a product catalog assistant. Answer questions using ONLY the
+    provided product context. If the answer is not in the context, say you
+    don't have that information. Cite product names when relevant.

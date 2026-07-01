@@ -1,0 +1,6 @@
+id,name,tier,description,specs
+1001,Pro Laptop 15,Pro,"High-performance laptop with 15-inch display.","{\"CPU\":\"Intel i7\",\"RAM\":\"16GB\",\"Storage\":\"512GB SSD\"}"
+1002,Pro Smartphone X,Pro,"Flagship smartphone with advanced camera system.","{\"Display\":\"6.5-inch OLED\",\"Camera\":\"108MP Triple Lens\",\"Battery\":\"4000mAh\"}"
+2001,Standard Tablet 10,Standard,"Affordable tablet with 10-inch screen.","{\"CPU\":\"ARM Cortex A53\",\"RAM\":\"4GB\",\"Storage\":\"64GB\"}"
+2002,Standard Monitor 24,Standard,"Budget-friendly 24-inch monitor.","{\"Resolution\":\"1080p\",\"Panel\":\"IPS\",\"RefreshRate\":\"60Hz\"}"
+3001,Enterprise Server Rack,Enterprise,"High-capacity server rack for data centers.","{\"CPU\":\"Xeon Platinum\",\"RAM\":\"256GB\",\"Storage\":\"10TB SSD\"}"

@@ -1,0 +1,35 @@
+[
+  {
+    "id": "1001",
+    "name": "Pro Laptop 15",
+    "tier": "Pro",
+    "description": "High-performance laptop with 15-inch display.",
+    "specs": [
+      { "name": "CPU", "value": "Intel i7" },
+      { "name": "RAM", "value": "16GB" },
+      { "name": "Storage", "value": "512GB SSD" }
+    ]
+  },
+  {
+    "id": "1002",
+    "name": "Pro Smartphone X",
+    "tier": "Pro",
+    "description": "Flagship smartphone with advanced camera system.",
+    "specs": [
+      { "name": "Display", "value": "6.5-inch OLED" },
+      { "name": "Camera", "value": "108MP Triple Lens" },
+      { "name": "Battery", "value": "4000mAh" }
+    ]
+  },
+  {
+    "id": "2001",
+    "name": "Standard Tablet 10",
+    "tier": "Standard",
+    "description": "Affordable tablet with 10-inch screen.",
+    "specs": [
+      { "name": "CPU", "value": "ARM Cortex A53" },
+      { "name": "RAM", "value": "4GB" },
+      { "name": "Storage", "value": "64GB" }
+    ]
+  }
+]

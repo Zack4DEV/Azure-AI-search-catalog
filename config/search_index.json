@@ -1,0 +1,53 @@
+{
+  "name": "product-catalog",
+  "fields": [
+    {
+      "name": "id",
+      "type": "Edm.String",
+      "key": true,
+      "filterable": true,
+      "sortable": true
+    },
+    {
+      "name": "name",
+      "type": "Edm.String",
+      "searchable": true,
+      "filterable": true,
+      "sortable": true
+    },
+    {
+      "name": "tier",
+      "type": "Edm.String",
+      "filterable": true,
+      "facetable": true
+    },
+    {
+      "name": "description",
+      "type": "Edm.String",
+      "searchable": true
+    },
+    {
+      "name": "specs",
+      "type": "Collection(Edm.ComplexType)",
+      "fields": [
+        { "name": "name", "type": "Edm.String", "searchable": true },
+        { "name": "value", "type": "Edm.String", "searchable": true }
+      ]
+    },
+    {
+      "name": "embedding",
+      "type": "Collection(Edm.Single)",
+      "searchable": true,
+      "vectorSearchDimensions": 1536,
+      "vectorSearchConfiguration": "default"
+    }
+  ],
+  "vectorSearch": {
+    "algorithmConfigurations": [
+      {
+        "name": "default",
+        "kind": "hnsw"
+      }
+    ]
+  }
+}
